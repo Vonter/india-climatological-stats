@@ -2,13 +2,15 @@
 
 Dataset of climatological statistics for India. Sourced from the [Indian Meteorological Department (IMD)](https://dsp.imdpune.gov.in).
 
-Browse the climatological dataset here: <https://flatgithub.com/Vonter/india-climatological-stats?filename=climatological.csv&stickyColumnName=station_name&sort=station_name>.
+Browse the basic climatological dataset here: <https://flatgithub.com/Vonter/india-climatological-stats?filename=climatological.csv&stickyColumnName=station_name&sort=station_name>.
 
 ## Data
 
 Dataset is available in CSV and Parquet formats:
-* [climatological.csv](climatological.csv): Basic climatological statistics for each station in CSV format
-* [climatological.parquet](climatological.parquet): All climatological statistics for each station in Parquet format
+* [climatological.csv](climatological.csv): Basic climatological statistics for each station in CSV format. Does not include all normals and includes only the highest extremes for each station.
+* [climatological.parquet](climatological.parquet): All climatological statistics for each station in Parquet format. Includes all normals and extremes for each station. 
+
+To explore or convert to other formats using a web browser, try [Konbert](https://konbert.com/viewer).
 
 ## Scripts
 
@@ -48,10 +50,8 @@ The fetch script sources data from Indian Meteorological Department (https://dsp
 
 ## TODO
 
-- Fix missing climatological extremes in CSV
-- Standardize field naming style
-- Validate parsing script
-- Optimize parsing script
+- Validations for parsing script results
+- Performance optimizations for parsing script
 
 ## Credits
 
