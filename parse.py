@@ -144,6 +144,17 @@ class ExtremeWeather:
                     except ValueError:
                         logging.warning(f"Could not convert '{value_part}' to float")
                         return None
+                
+                # Convert date format from DD-MM-YYYY to YYYY-MM-DD
+                try:
+                    if re.match(r'\d{1,2}-\d{1,2}-\d{4}', date_part):
+                        day, month, year = date_part.split('-')
+                        # Ensure day and month are two digits
+                        day = day.zfill(2)
+                        month = month.zfill(2)
+                        date_part = f"{year}-{month}-{day}"
+                except Exception as e:
+                    logging.warning(f"Failed to convert date format for '{date_part}': {e}")
                     
                 return cls(
                     month=month,
